@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCore.Web", "SimpleCore.Web\SimpleCore.Web.csproj", "{3F3570EB-BA56-40A5-8774-4CAB5536139D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCore.Infra", "SimpleCore.Infra\SimpleCore.Infra.csproj", "{EBAB2766-3F85-4823-959B-9C89B22AB6E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F3570EB-BA56-40A5-8774-4CAB5536139D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3570EB-BA56-40A5-8774-4CAB5536139D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3570EB-BA56-40A5-8774-4CAB5536139D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3570EB-BA56-40A5-8774-4CAB5536139D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAB2766-3F85-4823-959B-9C89B22AB6E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAB2766-3F85-4823-959B-9C89B22AB6E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAB2766-3F85-4823-959B-9C89B22AB6E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAB2766-3F85-4823-959B-9C89B22AB6E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D6A407F-8403-451D-91C7-E65A86EA0DE8}
+	EndGlobalSection
+EndGlobal

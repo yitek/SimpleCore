@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleCore.Web</name>
+    </assembly>
+    <members>
+        <member name="T:SimpleCore.Web.Controllers.AccountController">
+            <summary>
+            账号管理
+            </summary>
+        </member>
+        <member name="M:SimpleCore.Web.Controllers.AccountController.#ctor(SimpleCore.Domains.MyDbContext,Microsoft.Extensions.Logging.ILogger{SimpleCore.Web.Controllers.AccountController})">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:SimpleCore.Web.Controllers.AccountController.GetAccount(SimpleCore.Web.Models.AccountQueryViewModel)">
+            <summary>
+            GET: api/Account
+            获取账号列表
+            </summary>
+            <param name="qryModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Web.Controllers.AccountController.GetAccount(System.Guid)">
+            <summary>
+            GET: api/Account/5
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Web.Controllers.AccountController.PutAccount(System.Guid,SimpleCore.Web.Domains.Account)">
+            <summary>
+            PUT: api/Account/5
+            To protect from overposting attacks, enable the specific properties you want to bind to, for
+            more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+            </summary>
+            <param name="id"></param>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Web.Controllers.AccountController.PostAccount(SimpleCore.Web.Domains.Account)">
+            <summary>
+            POST: api/Account
+            To protect from overposting attacks, enable the specific properties you want to bind to, for
+            more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Web.Controllers.AccountController.DeleteAccount(System.Guid)">
+            <summary>
+            DELETE: api/Account/5
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SimpleCore.Web.Controllers.V2.AccountController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SimpleCore.Web.Controllers.V2.AccountController.Index">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SimpleCore.Web.Controllers.HomeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SimpleCore.Web.Controllers.HomeController.Login(SimpleCore.Models.LoginModel)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SimpleCore.Web.Domains.Account">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Web.Domains.Account.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Web.Domains.Account.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Web.Domains.Account.Email">
+            <summary>
+            电子邮件
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Web.Domains.Account.Mobile">
+            <summary>
+            移动电话
+            </summary>
+        </member>
+        <member name="T:SimpleCore.Web.Models.AccountQueryViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Web.Models.AccountQueryViewModel.Keyword">
+            <summary>
+            用户名/电子邮件/手机号
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Web.Models.AccountQueryViewModel.CreateTime_Min">
+            <summary>
+            账号创建时间(起始时间)
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Web.Models.AccountQueryViewModel.CreateTime_Max">
+            <summary>
+            账号创建时间(结束时间)
+            </summary>
+        </member>
+        <member name="T:SimpleCore.Web.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SimpleCore.Web.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:SimpleCore.Web.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SimpleCore.Web.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SimpleCore.Web.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:SimpleCore.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:SimpleCore.Web.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:SimpleCore.Domains.MyDbContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SimpleCore.Domains.MyDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{SimpleCore.Domains.MyDbContext})">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:SimpleCore.Domains.MyDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="M:SimpleCore.Domains.MyDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="P:SimpleCore.Domains.MyDbContext.Account">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>
