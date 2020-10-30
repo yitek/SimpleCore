@@ -17,6 +17,7 @@ using SimpleCore.OpenApi;
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Http;
 
 namespace SimpleCore
 {
@@ -61,6 +62,7 @@ namespace SimpleCore
             this.ConfigureApiDocumentServices(services);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
+            
 
 
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -175,6 +177,8 @@ namespace SimpleCore
             });
             if(this.ApiVersionDescriptors!=null && this.ApiVersionDescriptors.Count>0)
                 app.UseApiVersioning();
+
+            app.UseMiddleware<LayoutMiddleware>();
         }
 
         void AddApiVersioning(IServiceCollection services)
@@ -224,5 +228,8 @@ namespace SimpleCore
             }
             
         }
+
+        
+
     }
 }
