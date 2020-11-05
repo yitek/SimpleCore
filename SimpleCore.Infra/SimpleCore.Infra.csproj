@@ -247,7 +247,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    
+    <ProjectReference Include="..\third_parts\SqlSugar\SqlSugar.csproj" />
   </ItemGroup>
 
 

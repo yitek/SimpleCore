@@ -1,0 +1,32 @@
+@import "./element-variables.scss";
+body,#app,.el-container{
+    /*设置内部填充为0，几个布局元素之间没有间距*/
+    padding: 0px;
+     /*外部间距也是如此设置*/
+    margin: 0px;
+    /*统一设置高度为100%*/
+    height: 100%;
+}
+.app-wrapper {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+.el-header, .el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+}
+.el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+}
+.el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+}

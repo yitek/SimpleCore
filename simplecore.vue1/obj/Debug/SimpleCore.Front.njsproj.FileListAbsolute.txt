@@ -1,0 +1,2 @@
+D:\Yitek\SimpleCore\simplecore.vue\obj\Debug\SimpleCore.Front.njsproj.CoreCompileInputs.cache
+D:\Yitek\SimpleCore\simplecore.vue\bin\Microsoft.NodejsTools.WebRole.dll
