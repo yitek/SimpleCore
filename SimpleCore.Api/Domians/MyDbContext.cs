@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SimpleCore.Api.Domains;
+using SimpleCore.Api.Domians;
 
 namespace SimpleCore.Domains
 {
@@ -31,6 +32,7 @@ namespace SimpleCore.Domains
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>().ToTable("simple_account");
+            modelBuilder.Entity<Func>().ToTable("simple_func");
             base.OnModelCreating(modelBuilder);
 
         }
@@ -38,6 +40,8 @@ namespace SimpleCore.Domains
         /// 
         /// </summary>
         public DbSet<Account> Account { get; set; }
+
+        public DbSet<Func> Func { get; set; }
 
     }
 }

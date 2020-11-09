@@ -19,6 +19,15 @@ namespace SimpleCore.Api.Domians
         /// 功能名称
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// 图标式样 
+        /// </summary>
+        public string Icon { get; set; }
+
+        public string Image { get; set; }
+
+        
         /// <summary>
         /// 功能描述
         /// </summary>

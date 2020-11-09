@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using SimpleCore.Domains;
 using SimpleCore.Api.Domains;
 using SimpleCore.Api.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace SimpleCore.Api.Controllers
 {
@@ -18,6 +19,7 @@ namespace SimpleCore.Api.Controllers
     [Route("[controller]")]
     [ApiVersion("1.0", Deprecated=true)]
     [ApiController]
+
     public class AccountController : SimpleCore.ControllerBase
     {
         private readonly MyDbContext _context;

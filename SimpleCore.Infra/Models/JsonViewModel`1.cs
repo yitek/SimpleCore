@@ -1,17 +1,15 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace SimpleCore.Models
 {
-    public class JsonViewModel
+    public class JsonViewModel<T>:JsonViewModel
     {
-       
+        public new T Data { get; set; }
 
-
-        public static JsonViewModel Ok(string message = null,object data=null)
+        public static JsonViewModel Ok(string message = null, T data = default)
         {
             return new JsonViewModel()
             {
@@ -22,7 +20,7 @@ namespace SimpleCore.Models
             };
         }
 
-        public static JsonViewModel Error(string message = null,object data=null)
+        public static JsonViewModel Error(string message = null, T data = default)
         {
             return new JsonViewModel()
             {
@@ -33,17 +31,6 @@ namespace SimpleCore.Models
             };
         }
 
-        
 
-        public string ToJson() {
-            return JsonConvert.SerializeObject(this);
-        }
-        public bool Success { get; set; }
-
-        public bool Fail { get; set; }
-
-        public string Message { get; set; }
-
-        public object Data { get; set; }
     }
 }

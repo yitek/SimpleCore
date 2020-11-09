@@ -19,9 +19,19 @@ namespace SimpleCore.Controllers
             return model;
         }
 
-        protected async Task<LoginModel> DoLoginAsync(LoginModel model, Func<LoginModel, Task<IUser>> handleLogin) {
-            var user = await handleLogin(model);
+        protected async Task<LoginModel> DoLoginAsync(LoginModel model, Func<LoginModel, Task<IUser>> checkUserHandler) {
+            var user = await checkUserHandler(model);
+            if (user == null) return null;
             return DoLogin(model,user);
+        }
+
+        protected async Task DoLogoutAsync(User user,Func<User,User, Task<bool>> beforeLogout=null) {
+            if (beforeLogout != null && await beforeLogout(this.User,user)) {
+               
+                this.FlushToken(user.Id,user.Name, true);
+            }
+           
+
         }
     }
 }

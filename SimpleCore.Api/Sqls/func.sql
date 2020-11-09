@@ -60,8 +60,10 @@ CALL AddOrUpdateColumn('simple_func','code','varchar(800) NULL COMMENT''路径�
 
 CALL AddOrUpdateColumn('simple_func','url','varchar(800) NULL COMMENT''功能/菜单的访问地址''','');
 
+CALL AddOrUpdateColumn('simple_func','icon','varchar(60) NULL COMMENT''功能/菜单的访问地址''','');
+
 CALL AddOrUpdateColumn('simple_func','parentId','char(40) NULL COMMENT''上级菜单/页面''','');
 
-CALL AddOrUpdateColumn('simple_func','type','int NOT NULL COMMENT''功能类型:0=url,1=page,2=主菜单,3=快捷菜单''','');
+CALL AddOrUpdateColumn('simple_func','type','int NOT NULL DEFAULT 0 COMMENT''功能类型:0=url,1=page,2=主菜单,3=快捷菜单''','');
 
 CALL AddOrUpdateColumn('simple_func','isRelativeWithParent','int NOT NULL DEFAULT 0 COMMENT ''是否与上级func关联，如果上级func被选中，该func也一并会被选中''','');

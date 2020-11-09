@@ -46,9 +46,9 @@ namespace SimpleCore.Api
         /// <param name="env"></param>
         public override void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            base.Configure(app,env);
+            base.Configure(app, env);
             //启用中间件服务生成Swagger作为JSON终结点
-            
         }
+            
     }
 }

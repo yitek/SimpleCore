@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using SimpleCore.Models;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -53,6 +54,16 @@ namespace SimpleCore
             this.Response.Cookies.Append("Authorization", token);
             return token;
         }
-        
+
+
+        protected JsonViewModel Error(string message=null,object data= null) {
+            return JsonViewModel.Error(message,data);
+        }
+
+        protected JsonViewModel Success(string message=null,object data=null)
+        {
+            return JsonViewModel.Ok(message,data);
+        }
+
     }
 }

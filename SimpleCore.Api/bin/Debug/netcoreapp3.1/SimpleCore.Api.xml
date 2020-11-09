@@ -73,9 +73,28 @@
             
             </summary>
         </member>
+        <member name="M:SimpleCore.Api.Controllers.HomeController.#ctor(SimpleCore.Domains.MyDbContext)">
+            <summary>
+            通用的不需要登录的api
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="M:SimpleCore.Api.Controllers.HomeController.Login(SimpleCore.Models.LoginModel)">
             <summary>
             用户登录
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Api.Controllers.HomeController.Permissions">
+            <summary>
+            获取当前用户权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Api.Controllers.HomeController.Logout(SimpleCore.User)">
+            <summary>
+            退出登录
             </summary>
             <param name="model"></param>
             <returns></returns>
@@ -118,6 +137,11 @@
         <member name="P:SimpleCore.Api.Domians.Func.Name">
             <summary>
             功能名称
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Api.Domians.Func.Icon">
+            <summary>
+            图标式样 
             </summary>
         </member>
         <member name="P:SimpleCore.Api.Domians.Func.Description">
@@ -188,6 +212,11 @@
         <member name="P:SimpleCore.Api.Models.AccountQueryViewModel.CreateTime_Max">
             <summary>
             账号创建时间(结束时间)
+            </summary>
+        </member>
+        <member name="T:SimpleCore.Api.Models.PermissionViewModel">
+            <summary>
+            授权
             </summary>
         </member>
         <member name="T:SimpleCore.Api.Program">

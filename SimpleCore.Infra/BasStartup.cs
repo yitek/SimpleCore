@@ -18,6 +18,7 @@ using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 
 namespace SimpleCore
 {
@@ -51,16 +52,35 @@ namespace SimpleCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public virtual void ConfigureServices(IServiceCollection services)
         {
+            
+            // 跨域支持
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("any", builder =>
+            //    {
+            //        var urls = new string[] { "https://localhost:8080", "http://0.0.0.0:3201" };
+            //        //builder.WithOrigins("https://localhost:8080", "http://0.0.0.0:3201").AllowAnyHeader();
+            //        builder.WithOrigins(urls) // 允许部分站点跨域请求
+            //                                  //.AllowAnyOrigin() // 允许所有站点跨域请求（net core2.2版本后将不适用）
+            //        .AllowAnyMethod() // 允许所有请求方法
+            //        .AllowAnyHeader() // 允许所有请求头
+            //        .AllowCredentials(); // 允许Cookie信息
+            //    });
+            //});
+
+            
+            
             services.AddControllers();
+
             this.AddApiVersioning(services);
             services.AddVersionedApiExplorer();
 
-            var versionDescriptors = this.ApiVersionDescriptors = services.BuildServiceProvider()
+            this.ApiVersionDescriptors = services.BuildServiceProvider()
                      .GetRequiredService<IApiVersionDescriptionProvider>().ApiVersionDescriptions;
             services.AddMvcCore();
 
             this.ConfigureApiDocumentServices(services);
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             
 
@@ -159,21 +179,38 @@ namespace SimpleCore
             {
                 app.UseDeveloperExceptionPage();
             }
+
+
+            //app.UseMvc(options=>options.map);
+
+            
+
+            this.ConfigureApiDocument(app, env);
+
             app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseMiddleware<CorsMiddleware>();
+            //app.UseCors((options) => {
+            //    // options.AllowAnyOrigin()
+            //    var urls = new string[] { "https://localhost:8080", "http://0.0.0.0:3201" };
+            //    //builder.WithOrigins("https://localhost:8080", "http://0.0.0.0:3201").AllowAnyHeader();
+            //    options.WithOrigins(urls) // 允许部分站点跨域请求
+            //                              //.AllowAnyOrigin() // 允许所有站点跨域请求（net core2.2版本后将不适用）
+            //    .AllowAnyMethod() // 允许所有请求方法
+            //    .AllowAnyHeader(); // 允许所有请求头
+            //});
 
-            //app.UseAuthorization();
 
-            app.UseCors();
 
-            this.ConfigureApiDocument(app, env);
+
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                
             });
             if(this.ApiVersionDescriptors!=null && this.ApiVersionDescriptors.Count>0)
                 app.UseApiVersioning();
