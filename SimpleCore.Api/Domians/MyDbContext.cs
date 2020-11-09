@@ -33,6 +33,7 @@ namespace SimpleCore.Domains
         {
             modelBuilder.Entity<Account>().ToTable("simple_account");
             modelBuilder.Entity<Func>().ToTable("simple_func");
+            modelBuilder.Entity<Article>().ToTable("simple_article");
             base.OnModelCreating(modelBuilder);
 
         }
@@ -40,8 +41,14 @@ namespace SimpleCore.Domains
         /// 
         /// </summary>
         public DbSet<Account> Account { get; set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public DbSet<Func> Func { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DbSet<Article> Article { get; set; }
 
     }
 }

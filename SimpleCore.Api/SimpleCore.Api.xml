@@ -68,6 +68,59 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:SimpleCore.Api.Controllers.ArticleController">
+            <summary>
+            账号管理
+            </summary>
+        </member>
+        <member name="M:SimpleCore.Api.Controllers.ArticleController.#ctor(SimpleCore.Domains.MyDbContext,Microsoft.Extensions.Logging.ILogger{SimpleCore.Api.Controllers.AccountController})">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:SimpleCore.Api.Controllers.ArticleController.GetArticle(SimpleCore.Api.Models.ArticleQueryViewModel)">
+            <summary>
+            GET: api/Account
+            获取账号列表
+            </summary>
+            <param name="qryModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Api.Controllers.ArticleController.GetAccount(System.Guid)">
+            <summary>
+            GET: api/Account/5
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Api.Controllers.ArticleController.PutAccount(System.Guid,SimpleCore.Api.Domians.Article)">
+            <summary>
+            PUT: api/Account/5
+            To protect from overposting attacks, enable the specific properties you want to bind to, for
+            more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+            </summary>
+            <param name="id"></param>
+            <param name="article"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Api.Controllers.ArticleController.PostAccount(SimpleCore.Api.Domians.Article)">
+            <summary>
+            POST: api/Account
+            To protect from overposting attacks, enable the specific properties you want to bind to, for
+            more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+            </summary>
+            <param name="article"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleCore.Api.Controllers.ArticleController.DeleteAccount(System.Guid)">
+            <summary>
+            DELETE: api/Account/5
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:SimpleCore.Api.Controllers.HomeController">
             <summary>
             
@@ -122,6 +175,26 @@
         <member name="P:SimpleCore.Api.Domains.Account.Mobile">
             <summary>
             移动电话
+            </summary>
+        </member>
+        <member name="T:SimpleCore.Api.Domians.Article">
+            <summary>
+            文章
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Api.Domians.Article.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Api.Domians.Article.Title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Api.Domians.Article.Content">
+            <summary>
+            
             </summary>
         </member>
         <member name="T:SimpleCore.Api.Domians.Func">
@@ -214,6 +287,16 @@
             账号创建时间(结束时间)
             </summary>
         </member>
+        <member name="T:SimpleCore.Api.Models.ArticleQueryViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Api.Models.ArticleQueryViewModel.Title">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:SimpleCore.Api.Models.PermissionViewModel">
             <summary>
             授权
@@ -285,6 +368,16 @@
             <param name="modelBuilder"></param>
         </member>
         <member name="P:SimpleCore.Domains.MyDbContext.Account">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Domains.MyDbContext.Func">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SimpleCore.Domains.MyDbContext.Article">
             <summary>
             
             </summary>
